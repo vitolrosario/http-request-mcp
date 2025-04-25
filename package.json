@@ -1,6 +1,6 @@
 {
   "name": "@vrosario/http-request-mcp",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "`http-request-mcp` is a simple tool designed for making HTTP requests. It uses the MCP (Model Context Protocol) server to handle requests and supports various HTTP methods.",
   "main": "main.ts",
   "type": "module",
@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.9.0",
+  "homepage": "https://github.com/vitolrosario/http-request-mcp#readme",
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.10.2",
     "dotenv": "^16.5.0",
@@ -27,3 +28,4 @@
     "typescript": "^5.8.3"
   }
 }
+
