@@ -2,8 +2,8 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js"
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { z } from "zod"
-
 (async () => {
+
     const server = new McpServer({
         name: "http-mcp",
         version: "0.0.1"
@@ -18,7 +18,7 @@ import { z } from "zod"
             headers: z.record(z.string()).optional().describe('The headers to include in the request'),
             body: z.string().optional().describe('The body of the request')
         },
-        async ({ url, method, headers, body }) => {
+        async ({ url, method, headers, body }: { url: string; method: 'GET' | 'POST' | 'PUT' | 'DELETE'; headers?: Record<string, string>; body?: string }): Promise<{ content: { type: 'text'; text: string }[] }> => {
             try {
                 const response = await fetch(url, {
                     method,
@@ -47,11 +47,12 @@ import { z } from "zod"
                     return { content: [{ type: 'text', text }] };
                 }
             } catch (error) {
-                return error
+                return { content: [{ type: 'text', text: `Error: ${error instanceof Error ? error.message : 'Unknown error'}` }] };
             }
         }
     );
 
     const transport = new StdioServerTransport();
+
     await server.connect(transport);
 })();
