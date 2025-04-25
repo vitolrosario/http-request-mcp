@@ -17,5 +17,8 @@
   "publishConfig": {
     "access": "public"
   },
+  "bin": {
+    "http-request-mcp": "main.ts"
+  },
   "devDependencies": {}
 }
