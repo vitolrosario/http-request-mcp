@@ -20,6 +20,29 @@ To start the server, run:
 pnpm start
 ```
 
+## Example config
+NPX 
+```json
+{
+    "mcpServers": {
+        "http-request": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@vrosario/http-request-mcp",
+            ]
+        }
+    }
+}
+```
+
+Alternatively, you can install the Playwright MCP server using the VS Code CLI:
+
+```bash
+# For VS Code
+code --add-mcp '{"name":"http-request","command":"npx","args":["-y", "@vrosario/http-request-mcp"]}'
+```
+
 ## Parameters
 
 - **URL**: The URL to make the request to.
