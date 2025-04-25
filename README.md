@@ -36,7 +36,7 @@ NPX
 }
 ```
 
-Alternatively, you can install the Playwright MCP server using the VS Code CLI:
+Alternatively, you can install the HTTP Request MCP server using the VS Code CLI:
 
 ```bash
 # For VS Code
